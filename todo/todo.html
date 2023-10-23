@@ -1,0 +1,60 @@
+<div class="container">
+<input type="text" id="value" placeholder="Enter the todo">
+<button class="btn1" onclick="add()">Add</button>
+<ul  id="list-container">
+    <li>Hello
+        <button class="btn2" onclick="remove(event)">Delete</button>
+    </li>
+</ul>
+</div>
+
+<script>
+    let inputBox = document.getElementById("value")
+    let unList = document.getElementById("list-container")
+   function add(){
+      let listitem = document.createElement("li")
+      listitem.innerHTML=inputBox.value + "<button class='btn2' onclick='remove(event)'>Delete</button>"
+      unList.append(listitem)
+
+    }
+
+    function remove(event){
+         event.target.parentElement.remove()
+    }
+
+</script>
+
+<style>
+    .container{
+        background-color: rgb(236, 226, 226);
+        width:400px;
+        height:200px;
+        padding:100px
+    }
+
+    .btn1{
+        background-color: rgb(97, 219, 189);
+    }
+
+    .btn2{
+        background-color: rgb(235, 129, 129);
+    }
+
+
+    ul li{
+        background-color: rgb(206, 199, 199);
+        color:darkblue;
+        padding:10px;
+        margin: 10px
+    }
+
+    #value{
+        height:30px;
+        width: 300px;
+
+    }
+
+
+
+    
+</style>
